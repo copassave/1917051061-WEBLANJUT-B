@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', function(){
 	$data = [
-		'title' => "1917051061 - Home",
+		'title' => "Blog - Home",
 	];
 
 	echo view('layouts/header', $data);
@@ -42,12 +42,13 @@ $routes->get('/', function(){
 	return view('v_home');
 	echo view('layouts/footer');
 });
+$routes->get('/admin', 'Templating::index');
 $routes->get('/biodata/(:alpha)/(:num)', 'Home::fungsiBaru/$1/$2');
 $routes->get('/posts', 'PostController::index');
 
 $routes->get('/about', function(){
 	$data = [
-		'title' => "1917051061 - About",
+		'title' => "Blog - About",
 	];
 	echo view('layouts/header', $data);
 	echo view('layouts/navbar');
