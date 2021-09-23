@@ -33,29 +33,19 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', function(){
-	$data = [
-		'title' => "Blog - Home",
-	];
-
-	echo view('layouts/header', $data);
-	echo view('layouts/navbar');
-	return view('v_home');
-	echo view('layouts/footer');
+	echo view("layouts/header", ['title' => '1917051061 - Home']);
+	echo view("layouts/navbar");
+	echo view("v_home");
+	echo view("layouts/footer");
 });
-$routes->get('/admin', 'Templating::index');
-$routes->get('/biodata/(:alpha)/(:num)', 'Home::fungsiBaru/$1/$2');
-$routes->get('/posts', 'PostController::index');
-
 $routes->get('/about', function(){
-	$data = [
-		'title' => "Blog - About",
-	];
-	echo view('layouts/header', $data);
-	echo view('layouts/navbar');
-	return view ('v_about');
-	echo view('layouts/footer');
+	echo view("layouts/header", ['title' => '1917051061 - About']);
+	echo view("layouts/navbar");
+	echo view("v_about");
+	echo view("layouts/footer");
 });
-
+$routes->get('/posts', 'PostController::index');
+$routes->get('/admin', 'Templating::index');
 
 /*
  * --------------------------------------------------------------------

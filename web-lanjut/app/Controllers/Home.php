@@ -9,9 +9,12 @@ class Home extends BaseController
 		return view('welcome_message');
 	}
 
-	public function fungsiBaru($nama, $npm)
-	{
+	public function fungsiBaru($nama, $npm){
 		echo "Hello $nama";
 		echo "<br> $npm";
+	}
+
+	public function show(){
+		
 	}
 }

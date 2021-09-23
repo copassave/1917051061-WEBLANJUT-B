@@ -6,15 +6,15 @@ use App\Controllers\BaseController;
 
 class Templating extends BaseController
 {
-    public function index()
-    {
+	public function index()
+	{
         $data = [
-            'title' => "Blog - Posts",
+            'title' => 'Blog - Posts'
         ];
-        // echo view('layouts/header', $data);
-        // echo view('layouts/navbar');
-        // echo view('v_posts');
-        // echo view('layouts/footer');
-        return view('view_admin');
-    }
+		// echo view("layouts/header", ['title' => 'Blog - Posts']);
+		// echo view("layouts/navbar");
+		// echo view("v_posts");
+		// echo view("layouts/footer");
+        return view("v_admin");
+	}
 }
