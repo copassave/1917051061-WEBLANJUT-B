@@ -21,7 +21,7 @@ class Templating extends BaseController
 		// echo view("layouts/navbar");
 		// echo view("v_posts");
 		// echo view("layouts/footer");
-        return view("view_admin, $data");
+        return view("view_admin", $data);
 	}
 
 	public function register()
