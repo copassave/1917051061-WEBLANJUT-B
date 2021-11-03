@@ -99,16 +99,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                          <?php foreach ($posts as $i => $post) : ?>
+                          <?php 
+                            $count = 0;
+                            foreach ($posts as $i => $post) : 
+                            $count++;
+                          ?>
                             <tr>
-                                <th scope="row"><?= $i + 1; ?></th>
+                                <th><?= $count; ?></th>
                                 <td><?= $post['judul']; ?></td>
                                 <td><?= $post['slug']; ?></td>
                                 <td><?= $post['author']; ?></td>
                                 <td><?= $post['kategori']; ?></td>
                                 <td>
-                                    <a href="/posts/edit/<?= $post['slug']; ?>" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"> Edit</i></a>
-                                    <a href="/posts/delete/<?= $post['slug']; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"> Delete</i></a>
+                                <a href="/admin/posts/edit/<?= $post['slug']; ?>" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit">Edit</i></a>
+                                <a href="/admin/posts/delete/<?= $post['slug']; ?>" class="btn btn-sm btn-danger me-1" onclick="return confirm('Hapus?');"><i class="fas fa-trash">Delete</i></a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
